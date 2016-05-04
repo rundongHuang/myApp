@@ -3,6 +3,7 @@ import {SchedulePage} from '../schedule/schedule';
 import {SpeakerListPage} from '../speaker-list/speaker-list';
 import {MapPage} from '../map/map';
 import {AboutPage} from '../about/about';
+import {MyViewPage} from '../myView/myView'
 
 
 @Page({
@@ -14,6 +15,7 @@ export class TabsPage {
   tab2Root: any = SpeakerListPage;
   tab3Root: any = MapPage;
   tab4Root: any = AboutPage;
+  tab5Root: any = MyViewPage;;
   mySelectedIndex: number;
 
   constructor(navParams: NavParams) {

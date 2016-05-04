@@ -1,0 +1,26 @@
+<ion-navbar *navbar hideBackButton class="show-navbar">
+  <ion-title>Background Images</ion-title>
+</ion-navbar>
+
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="#imgList of imgList" class="styles">
+    <!--
+    <img [src]="imgList.image" (click)="showImgInfo()">  
+    -->
+    <!--<div class="card-title">São Paulo</div>
+    <div class="card-subtitle">41 Listings</div>-->
+    
+    <ion-row>
+      <ion-col> <img src="img/ica-slidebox-img-1.png" (click)="showImgInfo()"> </ion-col>
+      <ion-col> <img [src]="imgList.image" (click)="showImgInfo()"> </ion-col>
+      <ion-col> <img src="img/ica-slidebox-img-3.png" (click)="showImgInfo()"> </ion-col>
+   </ion-row>
+   
+  
+  </ion-card>
+ 
+
+
+ 
+</ion-content>
