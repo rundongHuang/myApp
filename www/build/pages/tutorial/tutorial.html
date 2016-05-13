@@ -5,12 +5,15 @@
 </ion-navbar>
 
 <ion-content>
-  <ion-slides pager (slideChangeStart)="onSlideChangeStart($event)">
-    <ion-slide *ngFor="#slide of slides">
+  <ion-slides pager (slideChangeStart)="onSlideChangeStart($event)"  >
+    
+    <ion-slide *ngFor="#slide of slides" class="slider" >
       <img [src]="slide.image" class="slide-image"/>
       <h2 class="slide-title" [innerHTML]="slide.title"></h2>
       <p [innerHTML]="slide.description"></p>
     </ion-slide>
+    
+    
     <ion-slide>
       <ion-toolbar>
       </ion-toolbar>
@@ -21,5 +24,7 @@
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-slide>
+    
+    
   </ion-slides>
 </ion-content>
