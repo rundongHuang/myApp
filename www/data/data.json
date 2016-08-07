@@ -329,6 +329,35 @@
       "lat": 43.07336,
       "lng": -89.38335
     }
+  ],
+  
+  "imgList":[
+    {
+      "title": "1",
+      "description": "1",
+      "image": "img/ica-slidebox-img-1.png"
+    },
+    {
+      "title": "2",
+      "description": "2",
+      "image": "img/ica-slidebox-img-2.png"
+    },
+    {
+      "title": "3",
+      "description": "3",
+      "image": "img/ica-slidebox-img-3.png"
+    },
+    {
+      "title": "4",
+      "description": "4",
+      "image": "img/ica-slidebox-img-4.png"
+    },
+    {
+      "title": "5",
+      "description": "5",
+      "image": "img/ica-slidebox-img-1.png"
+    }
+    
   ]
 
 }

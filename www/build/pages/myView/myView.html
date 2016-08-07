@@ -1,30 +1,45 @@
 <ion-navbar *navbar hideBackButton class="show-navbar">
-  <ion-title>Background Images</ion-title>
+  <ion-title>MyView</ion-title>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
 </ion-navbar>
 
 <ion-content class="card-background-page">
 
-  <!--<ion-card *ngFor="#imgList of imgList" class="styles">
+  <ion-card scrollX="true" *ngFor="#imgList of imgList" class="styles">
     
-    <img [src]="imgList.image" (click)="showImgInfo()">  
-    
+    <img src="img/ica-slidebox-img-1.png" (click)="showImgInfo(imgList)">  
+
     <div class="card-title">São Paulo</div>
     <div class="card-subtitle">41 Listings</div>
 
-  </ion-card>-->
+  </ion-card>
   
-    
-    
+   
 
- 
   
  
-  <ion-row *ngFor="#imgList of imgList" >
+  <!--<ion-row *ngFor="#imgList of imgList" >
     <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
     <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
     <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
-  </ion-row>
-
+     <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+      <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+       <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+        <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+  </ion-row>-->
+  
+  
+  <!--<ion-scroll scrollX="true">
+    <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+    <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+    <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+     <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+      <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+       <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+        <ion-col> <img [src]="imgList.image" (click)="showImgInfo(imgList)"> </ion-col>
+  </ion-scroll>-->
 
  
 </ion-content>

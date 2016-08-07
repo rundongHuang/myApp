@@ -1,5 +1,6 @@
 
 import {Page, NavController, Toast} from 'ionic-angular';
+import {ConferenceData} from '../../providers/conference-data';
 
 
 @Page({
@@ -7,34 +8,24 @@ import {Page, NavController, Toast} from 'ionic-angular';
 })
 export class MyViewPage { 
   
-  imgList = [];
-  numLL = 0
+   imgList = [];
+  
+   numLL:number = 0;
    
-  constructor(public nav: NavController) {
+  constructor(public nav: NavController, private confData: ConferenceData ) {
     
-    this.imgList = [
-      {
-        title: "Welcome to <b>ICA</b>",
-        description: "11111",
-        image: "img/ica-slidebox-img-1.png",
-      },
-      {
-        title: "What is Ionic?",
-        description: "22222",
-        image: "img/ica-slidebox-img-2.png",
-      },
-      {
-        title: " What is Ionic Platform?",
-        description: "333333",
-        image: "img/ica-slidebox-img-3.png",
-      },
-      {
-        title: " What is Ionic Platform?",
-        description: "4444444",
-        image: "img/ica-slidebox-img-4.png",
-      }
-    ];
-    
+      
+      this.confData.getImgData().then(data => {
+        
+        this.imgList = data;
+        
+        let len = data.length;
+       
+      });     
+      
+      console.log("22222");
+      
+     
   }
   
   showToast(imgList) {
@@ -49,9 +40,9 @@ export class MyViewPage {
   }
   
   
-  
-  showImgInfo(imgList){
-    console.log("----------%d--%s",this.numLL,imgList.description);
+  showImgInfo(data){
+    console.log(data)
+    // console.log("----------%d--%s",this.numLL,data.title);
     this.numLL = this.numLL + 1;
     
   }

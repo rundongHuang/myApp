@@ -5,10 +5,10 @@
 
   <ion-segment [(ngModel)]="segment" (change)="updateSchedule()">
     <ion-segment-button value="all">
-      All
+      所有
     </ion-segment-button>
     <ion-segment-button value="favorites">
-      Favorites
+      搜藏
     </ion-segment-button>
   </ion-segment>
 
@@ -38,14 +38,14 @@
 
       <ion-item-sliding *ngFor="#session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
 
-        <button ion-item (click)="goToSessionDetail(session)">
+        <!--<button ion-item (click)="goToSessionDetail(session)">
           <h3>{{session.name}}</h3>
           <p>
             {{session.timeStart}} &mdash;
             {{session.timeEnd}}:
             {{session.location}}
           </p>
-        </button>
+        </button>-->
 
         <ion-item-options>
           <button favorite (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">

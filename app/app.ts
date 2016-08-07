@@ -7,6 +7,7 @@ import {TabsPage} from './pages/tabs/tabs';
 import {LoginPage} from './pages/login/login';
 import {SignupPage} from './pages/signup/signup';
 import {TutorialPage} from './pages/tutorial/tutorial';
+import {MyViewPage} from "./pages/myView/myView";
 
 interface PageObj {
   title: string;
@@ -33,7 +34,7 @@ class ConferenceApp {
     { title: 'Speakers', component: TabsPage, index: 1, icon: 'contacts' },
     { title: 'Map', component: TabsPage, index: 2, icon: 'map' },
     { title: 'About', component: TabsPage, index: 3, icon: 'information-circle' },
-    { title: 'About', component: TabsPage, index: 3, icon: 'information-circle' },
+    { title: "myView", component: TabsPage, index: 4, icon: "information-circle" },
     
   ];
   loggedInPages: PageObj[] = [
@@ -100,4 +101,6 @@ class ConferenceApp {
       this.loggedIn = false;
     });
   }
+  
+  
 }

@@ -161,5 +161,12 @@ export class ConferenceData {
       return data.map;
     });
   }
+  
+  getImgData() {
+    return this.load().then(data => {
+      return data.imgList;
+    });
+  }
+ 
 
 }

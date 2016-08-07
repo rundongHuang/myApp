@@ -31,7 +31,7 @@ var ConferenceApp = (function () {
             { title: 'Speakers', component: tabs_1.TabsPage, index: 1, icon: 'contacts' },
             { title: 'Map', component: tabs_1.TabsPage, index: 2, icon: 'map' },
             { title: 'About', component: tabs_1.TabsPage, index: 3, icon: 'information-circle' },
-            { title: 'About', component: tabs_1.TabsPage, index: 3, icon: 'information-circle' },
+            { title: "myView", component: tabs_1.TabsPage, index: 4, icon: "information-circle" },
         ];
         this.loggedInPages = [
             { title: 'Logout', component: tabs_1.TabsPage, icon: 'log-out' }
@@ -230,33 +230,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var ionic_angular_1 = require('ionic-angular');
+var conference_data_1 = require('../../providers/conference-data');
 var MyViewPage = (function () {
-    function MyViewPage(nav) {
+    function MyViewPage(nav, confData) {
+        var _this = this;
         this.nav = nav;
+        this.confData = confData;
         this.imgList = [];
         this.numLL = 0;
-        this.imgList = [
-            {
-                title: "Welcome to <b>ICA</b>",
-                description: "11111",
-                image: "img/ica-slidebox-img-1.png",
-            },
-            {
-                title: "What is Ionic?",
-                description: "22222",
-                image: "img/ica-slidebox-img-2.png",
-            },
-            {
-                title: " What is Ionic Platform?",
-                description: "333333",
-                image: "img/ica-slidebox-img-3.png",
-            },
-            {
-                title: " What is Ionic Platform?",
-                description: "4444444",
-                image: "img/ica-slidebox-img-4.png",
-            }
-        ];
+        this.confData.getImgData().then(function (data) {
+            _this.imgList = data;
+            var len = data.length;
+        });
+        console.log("22222");
     }
     MyViewPage.prototype.showToast = function (imgList) {
         var toast = ionic_angular_1.Toast.create({
@@ -266,21 +252,22 @@ var MyViewPage = (function () {
         toast.setMessage(imgList.description);
         this.nav.present(toast);
     };
-    MyViewPage.prototype.showImgInfo = function (imgList) {
-        console.log("----------%d--%s", this.numLL, imgList.description);
+    MyViewPage.prototype.showImgInfo = function (data) {
+        console.log(data);
+        // console.log("----------%d--%s",this.numLL,data.title);
         this.numLL = this.numLL + 1;
     };
     MyViewPage = __decorate([
         ionic_angular_1.Page({
             templateUrl: 'build/pages/myView/myView.html'
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, conference_data_1.ConferenceData])
     ], MyViewPage);
     return MyViewPage;
 }());
 exports.MyViewPage = MyViewPage;
 
-},{"ionic-angular":349}],6:[function(require,module,exports){
+},{"../../providers/conference-data":14,"ionic-angular":349}],6:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -876,6 +863,11 @@ var ConferenceData = (function () {
     ConferenceData.prototype.getMap = function () {
         return this.load().then(function (data) {
             return data.map;
+        });
+    };
+    ConferenceData.prototype.getImgData = function () {
+        return this.load().then(function (data) {
+            return data.imgList;
         });
     };
     ConferenceData = __decorate([
