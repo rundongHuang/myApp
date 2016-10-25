@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Grid</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div class="slide-view">
+      <ion-slides [options]="{pager: true}" (ionWillChange)="onSlideChangeStart($event)" >
+        <ion-slide *ngFor="let slide of slides">
+          <img [src]="slide.image" class="about-header"/>
+          <!--<h2 class="slide-title" [innerHTML]="slide.title"></h2>-->
+        </ion-slide>
+      </ion-slides>
+  </div>
+
+  <div *ngFor="let V of voideTypeList" >
+        <!--<ion-title>{{val.name}}</ion-title>-->
+        <button ion-button full outline> {{V.name}} </button>
+
+      <ion-row *ngFor="let item of baseData"  class="grid-basic-page" >
+            <ion-col *ngFor="let index of timeList" >
+              
+                  <div>             
+                    <img src="assets/img/ica-slidebox-img-4.png" 
+                    (click)="updatePicture(index, item.name)"
+                    class="slide-image"
+                    />
+
+                    <ion-card-content>
+                      <ion-card-title>
+                        {{item.name}}
+                      </ion-card-title>
+                  
+                    </ion-card-content>
+
+                    <ion-row>
+                      <ion-col>
+                        <button primary clear item-right>
+                          <ion-icon name="thumbs-up"></ion-icon>
+                          1141
+                        </button>
+                      </ion-col>
+
+                      <ion-col>
+                      
+                        <button primary clear item-right>
+                            <ion-icon name="text"></ion-icon>
+                            41002
+                        </button>
+                      </ion-col>
+
+                    </ion-row>
+
+                  </div>
+
+            </ion-col> 
+        </ion-row>
+        <br>
+    </div> 
+
+
+  <button ion-button full>Update Picture</button>
+  
+</ion-content>

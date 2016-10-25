@@ -30,6 +30,12 @@ export class ScheduleFilterPage {
       });
 
     });
+
+    this.tracks.push({
+          name: "lowercase",
+          isChecked: true
+        });
+
   }
 
   resetFilters() {
@@ -49,5 +55,7 @@ export class ScheduleFilterPage {
     // using the injected ViewController this page
     // can "dismiss" itself and pass back data
     this.viewCtrl.dismiss(data);
+
+    console.log("dismiss:===>",data);
   }
 }

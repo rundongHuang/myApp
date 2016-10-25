@@ -10,6 +10,7 @@ page-tutorial {
   }
 
   .slide-title {
+    // height: 80%;
     margin-top: 2.8rem;
   }
 
@@ -33,5 +34,12 @@ page-tutorial {
       color: #000000;
     }
   }
+  .slide-tab{
+    height: 30%;
+    width: 100%;
+    background-color: #eff0f2;
+    border-bottom: 2px solid #00897B;
+
+}
 
 }

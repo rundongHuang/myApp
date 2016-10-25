@@ -22,6 +22,8 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
+import { NewPage } from '../pages/newPage/newPage';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { UserData } from '../providers/user-data';
     SpeakerDetailPage,
     SpeakerListPage,
     TabsPage,
-    TutorialPage
+    TutorialPage,
+    NewPage
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp)
@@ -58,7 +61,8 @@ import { UserData } from '../providers/user-data';
     SpeakerDetailPage,
     SpeakerListPage,
     TabsPage,
-    TutorialPage
+    TutorialPage,
+    NewPage
   ],
   providers: [ConferenceData, UserData, Storage]
 })

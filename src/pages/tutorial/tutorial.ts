@@ -4,6 +4,9 @@ import { MenuController, NavController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
 
+import { NewPage } from '../newPage/newPage';
+
+// import { StarPage } from '../star/star';
 
 export interface Slide {
   title: string;
